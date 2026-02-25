@@ -5,11 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Buy Package</title>
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* Buy Page Specific Style */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+background:#000;
+font-family:'Orbitron',sans-serif;
+color:white;
+overflow-x:hidden;
+}
+
+/* Container */
 .buy-container{
 min-height:100vh;
 display:flex;
@@ -17,69 +30,77 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
-background:#000;
+padding:30px 20px;
 }
 
+/* Title */
 .buy-container h1{
-color:#ff0000;
+font-size:30px;
+font-weight:700;
+color:#ff2a2a;
+letter-spacing:1px;
 margin-bottom:10px;
-text-shadow:0 0 15px #ff0000;
+text-shadow:0 0 15px rgba(255,0,0,0.6);
 }
 
 .powered{
-color:#bbb;
+color:#aaa;
 margin-bottom:5px;
 }
 
 .powered span{
-color:#ff0000;
-text-shadow:0 0 10px #ff0000;
+color:#ff2a2a;
+font-weight:600;
 }
 
 .agent{
-margin-bottom:25px;
-color:#00ffff;
-text-shadow:0 0 10px #00ffff;
+margin-bottom:30px;
+color:#00eaff;
+font-weight:600;
 }
 
+/* Form */
 form{
+width:100%;
+max-width:380px;
 display:flex;
 flex-direction:column;
-gap:15px;
-width:100%;
-max-width:350px;
+gap:18px;
 }
 
+/* Input */
 input,select{
-font-size:16px; /* zoom fix */
-padding:12px;
-border-radius:8px;
-border:1px solid rgba(255,0,0,0.4);
+font-size:16px;
+padding:14px;
+border-radius:12px;
+border:1px solid #222;
 background:#111;
 color:white;
 outline:none;
+transition:0.3s;
 }
 
 input:focus,select:focus{
-border:1px solid #ff0000;
-box-shadow:0 0 15px #ff0000;
+border:1px solid #ff2a2a;
+box-shadow:0 0 15px rgba(255,0,0,0.5);
 }
 
+/* Button */
 button{
-padding:14px;
-border-radius:30px;
-background:#ff0000;
+margin-top:10px;
+padding:15px;
+border-radius:40px;
 border:none;
+background:#ff2a2a;
 color:white;
+font-size:16px;
 cursor:pointer;
-box-shadow:0 0 20px #ff0000;
 transition:0.3s;
 }
 
 button:hover{
-transform:scale(1.05);
-box-shadow:0 0 30px #ff0000;
+background:#ff0000;
+box-shadow:0 0 25px rgba(255,0,0,0.7);
 }
 </style>
 
