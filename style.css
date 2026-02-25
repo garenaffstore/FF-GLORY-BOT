@@ -20,86 +20,18 @@ width:100%;
 height:100%;
 background:linear-gradient(-45deg,#000,#140000,#000,#1a0000);
 background-size:400% 400%;
-animation:gradient 12s ease infinite;
-z-index:-1;
+animation:gradientMove 12s ease infinite;
+z-index:-2;
 }
 
-@keyframes gradient{
+@keyframes gradientMove{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
 
-/* Hero */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:40px;
-color:#ff0000;
-text-shadow:0 0 20px #ff0000;
-}
-
-.hero p{
-margin:15px 0;
-color:#ccc;
-}
-
-/* Button */
-.btn{
-margin-top:20px;
-padding:14px 35px;
-border-radius:40px;
-background:#ff0000;
-border:none;
-color:white;
-cursor:pointer;
-box-shadow:0 0 20px #ff0000;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 35px #ff0000;
-}
-
-/* Section */
-.section{
-padding:100px 20px;
-text-align:center;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin-top:40px;
-}
-
-.card{
-padding:25px;
-border-radius:15px;
-background:rgba(255,255,255,0.05);
-text-decoration:none;
-color:white;
-border:1px solid rgba(255,0,0,0.3);
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #ff0000;
-}
-
-/* Forms */
-.form-box,.admin-box{
+/* 3D Floating Effect */
+.form-box{
 min-height:100vh;
 display:flex;
 flex-direction:column;
@@ -107,8 +39,47 @@ justify-content:center;
 align-items:center;
 padding:20px;
 text-align:center;
+animation:float 6s ease-in-out infinite;
 }
 
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+/* Gradient Title */
+.gradient-text{
+font-size:28px;
+background:linear-gradient(90deg,#ff0000,#ff5555,#ff0000);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:glowText 2s infinite alternate;
+}
+
+@keyframes glowText{
+from{ text-shadow:0 0 10px #ff0000; }
+to{ text-shadow:0 0 25px #ff0000; }
+}
+
+/* Brand Glow */
+.brand-glow{
+color:#ff0000;
+text-shadow:0 0 15px #ff0000,0 0 30px #ff0000;
+}
+
+/* Agent Neon */
+.agent{
+margin-top:5px;
+margin-bottom:25px;
+color:#aaa;
+}
+
+.agent-neon{
+color:#00ffff;
+text-shadow:0 0 10px #00ffff,0 0 25px #00ffff;
+}
+
+/* Form */
 form{
 display:flex;
 flex-direction:column;
@@ -117,31 +88,38 @@ width:100%;
 max-width:350px;
 }
 
+/* IMPORTANT: 16px prevents iPhone zoom */
 input,select{
-padding:12px;
-border-radius:8px;
-border:none;
+font-size:16px;
+padding:14px;
+border-radius:15px;
+border:1px solid rgba(255,0,0,0.4);
 background:#111;
 color:white;
-border:1px solid rgba(255,0,0,0.3);
+outline:none;
+transition:0.3s;
 }
 
-.admin-card{
-background:#111;
-padding:20px;
-margin:10px 0;
-border-radius:10px;
-border:1px solid rgba(255,0,0,0.3);
+input:focus,select:focus{
+border:1px solid #ff0000;
+box-shadow:0 0 20px #ff0000;
 }
 
-footer{
-padding:20px;
-text-align:center;
-background:black;
+/* Button */
+.btn{
+margin-top:15px;
+padding:16px;
+border-radius:40px;
+background:#ff0000;
+border:none;
+color:white;
+font-size:16px;
+cursor:pointer;
+box-shadow:0 0 25px #ff0000;
+transition:0.3s;
 }
 
-.admin-link{
-color:#ff0000;
-display:block;
-margin-top:10px;
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 40px #ff0000;
 }
