@@ -5,6 +5,8 @@ box-sizing:border-box;
 }
 
 html,body{
+margin:0;
+padding:0;
 width:100%;
 background:#000;
 font-family:'Orbitron',sans-serif;
@@ -12,12 +14,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* remove safari white edges */
-body{
-margin:0;
-}
-
-/* canvas */
+/* STAR CANVAS */
 #stars{
 position:fixed;
 top:0;
@@ -36,13 +33,15 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:40px 20px;
+background:transparent; /* important */
 }
 
 .hero h1{
 font-size:34px;
-letter-spacing:2px;
 font-weight:700;
+letter-spacing:2px;
 color:#ff2a2a;
+text-shadow:0 0 20px rgba(255,0,0,0.6);
 }
 
 .hero p{
@@ -63,12 +62,14 @@ transition:0.3s;
 
 .btn:hover{
 background:#ff0000;
+box-shadow:0 0 25px rgba(255,0,0,0.7);
 }
 
 /* PRICING */
 .pricing{
 padding:80px 20px;
 text-align:center;
+background:transparent;
 }
 
 .pricing h2{
@@ -86,13 +87,14 @@ margin:0 auto;
 }
 
 .card{
-background:#111;
+background:rgba(17,17,17,0.85);
 padding:25px;
 border-radius:12px;
 text-decoration:none;
 color:white;
 border:1px solid #222;
 transition:0.3s;
+backdrop-filter:blur(6px);
 }
 
 .card span{
@@ -105,6 +107,7 @@ font-weight:600;
 .card:hover{
 transform:translateY(-6px);
 border-color:#ff2a2a;
+box-shadow:0 0 20px rgba(255,0,0,0.5);
 }
 
 /* FOOTER */
@@ -112,4 +115,5 @@ footer{
 text-align:center;
 padding:40px 20px;
 color:#666;
+background:transparent;
 }
