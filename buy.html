@@ -4,15 +4,99 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Buy Package</title>
+
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* Buy Page Specific Style */
+.buy-container{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:#000;
+}
+
+.buy-container h1{
+color:#ff0000;
+margin-bottom:10px;
+text-shadow:0 0 15px #ff0000;
+}
+
+.powered{
+color:#bbb;
+margin-bottom:5px;
+}
+
+.powered span{
+color:#ff0000;
+text-shadow:0 0 10px #ff0000;
+}
+
+.agent{
+margin-bottom:25px;
+color:#00ffff;
+text-shadow:0 0 10px #00ffff;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+width:100%;
+max-width:350px;
+}
+
+input,select{
+font-size:16px; /* zoom fix */
+padding:12px;
+border-radius:8px;
+border:1px solid rgba(255,0,0,0.4);
+background:#111;
+color:white;
+outline:none;
+}
+
+input:focus,select:focus{
+border:1px solid #ff0000;
+box-shadow:0 0 15px #ff0000;
+}
+
+button{
+padding:14px;
+border-radius:30px;
+background:#ff0000;
+border:none;
+color:white;
+cursor:pointer;
+box-shadow:0 0 20px #ff0000;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px #ff0000;
+}
+</style>
+
 </head>
 <body>
 
-<div class="form-box">
+<div class="buy-container">
 
 <h1 id="title"></h1>
-<p class="powered">Powered by <span>FFGLORYBOT</span></p>
-<p class="agent">Agent JibonModz</p>
+
+<p class="powered">
+Powered by <span>FFGLORYBOT</span>
+</p>
+
+<p class="agent">
+Agent JibonModz
+</p>
 
 <form id="buyForm">
 <input type="text" id="name" placeholder="Your Name" required>
@@ -23,7 +107,7 @@
 <option>India</option>
 <option>Pakistan</option>
 </select>
-<button type="submit" class="btn">Confirm</button>
+<button type="submit">Confirm</button>
 </form>
 
 </div>
