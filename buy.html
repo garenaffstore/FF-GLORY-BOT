@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +9,18 @@
 
 <body>
 
-<div class="bg"></div>
+<div class="animated-bg"></div>
 
 <div class="form-box">
 
-<h1 id="title">Buy Package</h1>
+<h1 id="title"></h1>
 <p class="powered">Powered by FFGLORY.PRO</p>
 <p class="agent">Package Agent: JibonModz</p>
 
 <form id="buyForm">
-<input type="text" placeholder="Your Name" required>
+<input type="text" id="name" placeholder="Your Name" required>
 <input type="text" id="selected" readonly>
-<select required>
+<select id="country" required>
 <option value="">Select Country</option>
 <option>Bangladesh</option>
 <option>India</option>
@@ -34,11 +34,24 @@
 <script>
 const params = new URLSearchParams(window.location.search);
 const pack = params.get("package");
+
 document.getElementById("selected").value = pack;
 document.getElementById("title").innerText = "Buy " + pack + " Coin";
 
 document.getElementById("buyForm").addEventListener("submit", function(e){
 e.preventDefault();
+
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+orders.push({
+name: document.getElementById("name").value,
+package: pack,
+country: document.getElementById("country").value,
+date: new Date().toLocaleString()
+});
+
+localStorage.setItem("orders", JSON.stringify(orders));
+
 window.location.href = "https://sub4unlock.io/VOdBI";
 });
 </script>
