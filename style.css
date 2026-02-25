@@ -1,1 +1,133 @@
+body{
+margin:0;
+font-family:'Orbitron',sans-serif;
+background:#0a0a0a;
+color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
 
+#particles{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 50px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:red;
+}
+
+.logo{
+color:red;
+font-weight:700;
+}
+
+.hero-content{
+margin:auto;
+text-align:center;
+}
+
+.hero-content h1{
+font-size:70px;
+color:red;
+text-shadow:0 0 25px red;
+}
+
+.btn-glow{
+padding:15px 40px;
+border:2px solid red;
+background:transparent;
+color:red;
+cursor:pointer;
+transition:0.4s;
+box-shadow:0 0 15px red;
+}
+
+.btn-glow:hover{
+background:red;
+color:white;
+box-shadow:0 0 35px red;
+}
+
+.section{
+padding:100px 20px;
+text-align:center;
+}
+
+.dark{
+background:#111;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:50px;
+}
+
+.glass-card{
+background:rgba(255,0,0,0.1);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:15px;
+border:1px solid rgba(255,0,0,0.3);
+transition:0.4s;
+}
+
+.glass-card:hover{
+transform:translateY(-15px);
+box-shadow:0 0 30px red;
+}
+
+.faq-item{
+margin:20px auto;
+max-width:600px;
+background:#111;
+padding:20px;
+border-radius:10px;
+}
+
+footer{
+background:black;
+padding:20px;
+text-align:center;
+}
+
+.cursor{
+width:20px;
+height:20px;
+border:2px solid red;
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+transition:0.1s;
+}
