@@ -5,16 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FF GLORY BOT</title>
 
-<link rel="stylesheet" href="main.css?v=2">
+<link rel="stylesheet" href="main.css?v=3">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
+<canvas id="stars"></canvas>
+
 <section class="hero">
 <h1>FF GLORY BOT</h1>
 <p>Elite Gaming Coin Platform</p>
-<a href="#pricing" class="btn">Buy Now</a>
+<a href="#pricing" class="btn neon-btn">Buy Now</a>
 </section>
 
 <section id="pricing" class="pricing">
@@ -22,12 +24,12 @@
 
 <div class="grid">
 
-<a href="buy.html?package=1Basic" class="card">1 Basic <span>$1</span></a>
-<a href="buy.html?package=2Basic" class="card">2 Basic <span>$2</span></a>
-<a href="buy.html?package=5Basic" class="card">5 Basic <span>$4.50</span></a>
-<a href="buy.html?package=10Basic" class="card">10 Basic <span>$10</span></a>
-<a href="buy.html?package=20Basic" class="card">20 Basic <span>$18</span></a>
-<a href="buy.html?package=50Basic" class="card">50 Basic <span>$45</span></a>
+<a href="buy.html?package=1Basic" class="card neon-border">1 Basic <span>$1</span></a>
+<a href="buy.html?package=2Basic" class="card neon-border">2 Basic <span>$2</span></a>
+<a href="buy.html?package=5Basic" class="card neon-border">5 Basic <span>$4.50</span></a>
+<a href="buy.html?package=10Basic" class="card neon-border">10 Basic <span>$10</span></a>
+<a href="buy.html?package=20Basic" class="card neon-border">20 Basic <span>$18</span></a>
+<a href="buy.html?package=50Basic" class="card neon-border">50 Basic <span>$45</span></a>
 
 </div>
 </section>
@@ -35,6 +37,43 @@
 <footer>
 <p>© 2026 FF GLORY BOT</p>
 </footer>
+
+<script>
+// ⭐ STAR FIELD
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let stars = [];
+for(let i=0;i<120;i++){
+stars.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2
+});
+}
+
+function drawStars(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="white";
+stars.forEach(star=>{
+ctx.beginPath();
+ctx.arc(star.x,star.y,star.size,0,Math.PI*2);
+ctx.fill();
+star.y += 0.3;
+if(star.y>canvas.height) star.y=0;
+});
+requestAnimationFrame(drawStars);
+}
+drawStars();
+
+window.addEventListener("resize",()=>{
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+});
+</script>
 
 </body>
 </html>
