@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="animated-bg"></div>
+
+<div class="admin-box">
+<h1>Admin Dashboard</h1>
+<div id="orders"></div>
+</div>
+
+<script>
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+let container = document.getElementById("orders");
+
+if(orders.length === 0){
+container.innerHTML = "<p>No Orders Yet</p>";
+}else{
+orders.forEach(order=>{
+container.innerHTML += `
+<div class="admin-card">
+<p><b>Name:</b> ${order.name}</p>
+<p><b>Package:</b> ${order.package}</p>
+<p><b>Country:</b> ${order.country}</p>
+<p><b>Date:</b> ${order.date}</p>
+</div>
+`;
+});
+}
+</script>
+
+</body>
+</html>
