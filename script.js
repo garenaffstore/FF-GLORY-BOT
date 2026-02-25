@@ -1,6 +1,5 @@
-// Scroll Reveal Animation
-window.addEventListener("scroll", () => {
-document.querySelectorAll(".reveal").forEach(el => {
+window.addEventListener("scroll",()=>{
+document.querySelectorAll(".reveal").forEach(el=>{
 const windowHeight = window.innerHeight;
 const elementTop = el.getBoundingClientRect().top;
 
