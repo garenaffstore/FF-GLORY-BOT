@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy Package</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-box">
+
+<h1 id="title"></h1>
+<p class="powered">Powered by <span>FFGLORYBOT</span></p>
+<p class="agent">Agent JibonModz</p>
+
+<form id="buyForm">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="text" id="selected" readonly>
+<select required>
+<option value="">Select Country</option>
+<option>Bangladesh</option>
+<option>India</option>
+<option>Pakistan</option>
+</select>
+<button type="submit" class="btn">Confirm</button>
+</form>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const pack = params.get("package");
+document.getElementById("selected").value = pack;
+document.getElementById("title").innerText = "Buy " + pack + " Coin";
+
+document.getElementById("buyForm").addEventListener("submit", function(e){
+e.preventDefault();
+window.location.href = "https://sub4unlock.io/VOdBI";
+});
+</script>
+
+</body>
+</html>
